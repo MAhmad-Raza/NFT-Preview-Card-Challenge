@@ -1,0 +1,141 @@
+:root {
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --cyan: hsl(178, 100%, 50%, 0.5);
+  --soft-blue: hsl(215, 51%, 70%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Outfit", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  background: var(--main-bg);
+  padding: 25px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background: var(--card-bg);
+  max-width: 350px;
+  padding: 24px;
+  border-radius: 15px;
+  box-shadow: 0 20px 25px 15px rgba(0, 0, 0, 0.05),
+    0 40px 30px 15px rgba(0, 0, 0, 0.1);
+}
+
+.productImg {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.productImg::after {
+  content: url(/images/icon-view.svg);
+  background: var(--cyan);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+.productImg:hover::after {
+  opacity: 1;
+}
+
+.productImg img {
+  width: 100%;
+  display: block;
+}
+
+.cardBody {
+  padding: 23px 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 15px;
+}
+
+.cardHeading {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.cardHeading:hover {
+  color: var(--cyan);
+}
+
+.cardText {
+  color: var(--soft-blue);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 23px;
+}
+
+.cardBody .cardWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardPrice,
+.countDown {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.cardPrice {
+  color: var(--cyan);
+}
+
+.ethIcon {
+  margin-right: 6px;
+}
+.countDown {
+  color: var(--soft-blue);
+}
+.clockIcon {
+  margin-right: 6px;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cardCreator {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.creatorInfo {
+  color: var(--soft-blue);
+  font-weight: 500;
+}
+.creatorInfo a {
+  color: var(--white);
+  font-weight: 400;
+}
+.creatorInfo a:hover {
+  color: var(--cyan);
+}
